@@ -106,7 +106,9 @@ SELECT* FROM memberships WHERE   date_start between '1-12-2024'and'5-12-2024';
 CREATE TABLE Salles(salle_id INT AUTO_INCREMENT PRIMARY KEY,salle_number varchar(10),salle_type enum('Cardio','Weights','Studio'),capacity int(11));
 
 SELECT *FROM Salles;
--- ---------------------------------------------------------------------------------------------TOTAL DES ABONNEMENTS
+-- -------------------------------------------------------------------------------------------delete
+DELETE FROM Appointments
+WHERE appointement_date < '2024-01-01';
 
 
 
