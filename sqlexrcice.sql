@@ -142,7 +142,9 @@ UPDATE  departements
 SET departement_name="Force et Conditionnement"
 WHERE departement_name="Musculation";
 -- ------------------------------------------------------- CLAUSE HAVING 
-
+ SELECT sexe  ,COUNT(*) AS nombre_membres 
+ FROM  mbs 
+ GROUP BY sexe;
 
 
 
