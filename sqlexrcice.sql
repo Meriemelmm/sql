@@ -111,28 +111,6 @@ DELETE FROM Appointments
 WHERE appointement_date < '2024-01-01';
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 CREATE TABLE Salles(salle_id INT AUTO_INCREMENT PRIMARY KEY,salle_number varchar(10),salle_type enum('Cardio','Weights','Studio'),capacity int(11));
 
 SELECT *FROM Salles;
@@ -141,6 +119,20 @@ CREATE TABLE memberships(memebership_id INT AUTO_INCREMENT PRIMARY KEY,id INT,sa
 select *from memberships;
 -- ---------------------------------------------------------------operation speciaux 
 SELECT* FROM memberships WHERE   start_date between '1-12-2024'and'5-12-2024';
+SELECT  SUM(.membershipsNumber_of_Memberships) AS total_abonnements  ,Salle. salle_type FROM memberships  JOIN Salles ON memberships.salle_id= Salles.salle_id 
+GROUP BY Salle.salle_type;
+-- ---------------------------------Jointure : Liste des rendez-vous avec noms des entraîneurs et membres
+-- ----------------------------------Récupérez les rendez-vous avec les noms des entraîneurs et des membres.
+
+SELECT
+.prenom,
+  etudiant.nom_de_famille,
+  cours.nom
+FROM memberships
+JOIN mbs
+  ON memberships.
+JOIN 
+  ON cours.id = etudiant_cours.cours_id;
 
 
 
