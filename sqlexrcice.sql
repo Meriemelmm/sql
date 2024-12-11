@@ -125,14 +125,23 @@ GROUP BY Salle.salle_type;
 -- ----------------------------------Récupérez les rendez-vous avec les noms des entraîneurs et des membres.
 
 SELECT
-.prenom,
-  etudiant.nom_de_famille,
-  cours.nom
-FROM memberships
+    memberships.memebership_id,
+ mbs.id,
+mbs.nom,
+ Entraineurs. id_etraineur,
+Entraineurs.last_name,
+Entraineurs.first_name
+
+FROM Appointments
 JOIN mbs
-  ON memberships.
-JOIN 
-  ON cours.id = etudiant_cours.cours_id;
+  ON Appointments.id=mbs.id
+JOIN Entraineurs
+  ON Appointments. id_etraineur= Entraineurs.id_etraineur;
+-- --------------------------------------------------- update mae's departement
+UPDATE  departements
+SET departement_name="Force et Conditionnement"
+WHERE departement_name="Musculation";
+-- ------------------------------------------------------- CLAUSE HAVING 
 
 
 
